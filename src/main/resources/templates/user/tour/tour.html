@@ -150,9 +150,9 @@
                         </div>
                         <p th:text="${tour.tour_name}"></p>
                         <div class="d-flex justify-content-center mb-2">
-                            <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                            <a th:href="@{/tour_detail/{id}(id=${tour.tour_id})}" class="btn btn-sm btn-primary px-3 border-end"
                                style="border-radius: 30px 0 0 30px;">Chi tiết</a>
-                            <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Đặt
+                            <a th:href="@{/booking/{id}(id=${tour.tour_id})}" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Đặt
                                 lịch</a>
                         </div>
                     </div>

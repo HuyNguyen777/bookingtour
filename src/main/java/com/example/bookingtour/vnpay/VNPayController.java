@@ -48,7 +48,13 @@ public class VNPayController {
                     b.getPayment_status(),
                     b.getSpecial_request()
             );
-
+            System.out.println("Thông tin giao dịch: ");
+            System.out.println("Customer ID: " + b.getCustomer_id());
+            System.out.println("Tour ID: " + b.getTour_id());
+            System.out.println("Num Guests: " + b.getNum_guests());
+            System.out.println("Total Price: " + b.getTotal_price());
+            System.out.println("Payment Status: " + b.getPayment_status());
+            System.out.println("Special Request: " + b.getSpecial_request());
             return ResponseEntity.ok(paymentUrl);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Đã xảy ra lỗi khi tạo thanh toán.");
@@ -63,6 +69,7 @@ public class VNPayController {
                                     @PathVariable("totalPrice") double totalPrice, @PathVariable("paymentStatus") int paymentStatus,
                                     @PathVariable("specialRequest") String specialRequest
     ) {
+
         Booking b = new Booking();
         b.setCustomerId(customerId);
         b.setTourId(tourId);
@@ -70,7 +77,7 @@ public class VNPayController {
         b.setNumGuests(numGuests);
         b.setTotalPrice(totalPrice);
         b.setPaymentStatus(paymentStatus);
-        b.setBookingStatus(2);
+        b.setBookingStatus(1);
         bookingService.save(b);
 
         Notification notification = new Notification();
