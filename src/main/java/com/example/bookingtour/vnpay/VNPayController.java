@@ -77,7 +77,7 @@ public class VNPayController {
         b.setNumGuests(numGuests);
         b.setTotalPrice(totalPrice);
         b.setPaymentStatus(paymentStatus);
-        b.setBookingStatus(1);
+        b.setBookingStatus(2);
         bookingService.save(b);
 
         Notification notification = new Notification();
